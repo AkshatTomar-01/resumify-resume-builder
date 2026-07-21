@@ -9,16 +9,31 @@ const Hero = () => {
     const [menuOpen, setMenuOpen] = React.useState(false);
 
     const logos = [
-        { name: 'Instagram', src: 'https://cdn.simpleicons.org/instagram/E1306C' },
-        { name: 'Framer', src: 'https://cdn.simpleicons.org/framer/0055FF' },
-        { name: 'Microsoft', src: 'https://cdn.simpleicons.org/microsoft/737373' },
-        { name: 'Huawei', src: 'https://cdn.simpleicons.org/huawei/CF0A2C' },
-        { name: 'Walmart', src: 'https://cdn.simpleicons.org/walmart/0071CE' },
+        {
+            name: 'Instagram',
+            svg: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-auto fill-[#E1306C]"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.247 2.242 1.31 3.608.058 1.265.069 1.645.069 4.849s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.247-3.608 1.31-1.265.058-1.645.069-4.849.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.247-2.242-1.31-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.247 3.608-1.31C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 2.014 2.014.673 3.355.157 5.197.072 7.052.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 1.942 5.038 1.341 1.341 3.183 1.857 5.038 1.942C8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.855-.085 3.697-.601 5.038-1.942 1.341-1.341 1.857-3.183 1.942-5.038C23.986 15.668 24 15.259 24 12s-.014-3.668-.072-4.948c-.085-1.855-.601-3.697-1.942-5.038C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        },
+        {
+            name: 'Framer',
+            svg: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-auto fill-[#0055FF]"><path d="M4 0h16v8h-8zm0 8h8l8 8H4zm0 8h8v8z"/></svg>
+        },
+        {
+            name: 'Microsoft',
+            svg: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-auto"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="13" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="13" width="10" height="10" fill="#00A4EF"/><rect x="13" y="13" width="10" height="10" fill="#FFB900"/></svg>
+        },
+        {
+            name: 'Google',
+            svg: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-auto"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        },
+        {
+            name: 'Walmart',
+            svg: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-auto fill-[#0071CE]"><path d="M12 0L9.6 7.8H1.56l6.48 4.68-2.4 7.8L12 15.6l6.36 4.68-2.4-7.8 6.48-4.68H14.4z"/></svg>
+        },
     ]
 
   return (
     <>
-    <div className="min-h-screen pb-20">
+    <div className="pb-6">
         {/* Navbar */}
         <nav className="z-50 flex items-center justify-between w-full py-4 px-6 md:px-16 lg:px-24 xl:px-40 text-sm">
             <a href="https://prebuiltui.com">
@@ -107,10 +122,10 @@ const Hero = () => {
                 </button>
             </div>
 
-            <p className="py-6 text-slate-600 mt-14">Trusting by leading brands, including</p>
+            <p className="py-4 text-slate-600">Trusting by leading brands, including</p>
 
             <div className="flex flex-wrap justify-between max-sm:justify-center gap-6 max-w-3xl w-full mx-auto py-4" id="logo-container">
-                {logos.map((logo, index) => <img key={index} src={logo.src} alt={logo.name} className="h-6 w-auto max-w-xs" />)}
+                {logos.map((logo, index) => <div key={index} className="h-6 w-auto flex items-center" title={logo.name}>{logo.svg}</div>)}
             </div>
         </div>
     </div>
