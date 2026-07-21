@@ -9,11 +9,11 @@ const Hero = () => {
     const [menuOpen, setMenuOpen] = React.useState(false);
 
     const logos = [
-        'https://saasly.prebuiltui.com/assets/companies-logo/instagram.svg',
-        'https://saasly.prebuiltui.com/assets/companies-logo/framer.svg',
-        'https://saasly.prebuiltui.com/assets/companies-logo/microsoft.svg',
-        'https://saasly.prebuiltui.com/assets/companies-logo/huawei.svg',
-        'https://saasly.prebuiltui.com/assets/companies-logo/walmart.svg',
+        { name: 'Instagram', src: 'https://cdn.simpleicons.org/instagram/E1306C' },
+        { name: 'Framer', src: 'https://cdn.simpleicons.org/framer/0055FF' },
+        { name: 'Microsoft', src: 'https://cdn.simpleicons.org/microsoft/737373' },
+        { name: 'Huawei', src: 'https://cdn.simpleicons.org/huawei/CF0A2C' },
+        { name: 'Walmart', src: 'https://cdn.simpleicons.org/walmart/0071CE' },
     ]
 
   return (
@@ -110,7 +110,7 @@ const Hero = () => {
             <p className="py-6 text-slate-600 mt-14">Trusting by leading brands, including</p>
 
             <div className="flex flex-wrap justify-between max-sm:justify-center gap-6 max-w-3xl w-full mx-auto py-4" id="logo-container">
-                {logos.map((logo, index) => <img key={index} src={logo} alt="logo" className="h-6 w-auto max-w-xs" />)}
+                {logos.map((logo, index) => <img key={index} src={logo.src} alt={logo.name} className="h-6 w-auto max-w-xs" />)}
             </div>
         </div>
     </div>
